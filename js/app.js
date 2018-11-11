@@ -2,7 +2,8 @@
 $(document).foundation();
 
 $(document).ready(function() {
-  if (TPOptions.showAboutBox == false) {
+  var modes = ((new URL(document.location)).searchParams.get('mode') || '').split(',');
+  if (TPOptions.showAboutBox == false || modes.indexOf('silent') > -1) {
     startWS();
   } else {
     var box = $('#aboutBox');
