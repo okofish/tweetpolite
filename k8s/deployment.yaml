@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tweetpolite-websocket
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: websocket
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: websocket
+    spec:
+      containers:
+        - name: tweetpolite-websocket
+          image: ghcr.io/okofish/tweetpolite-server:master
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: TWEETPOLITE_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: twitter-auth
+                  key: twitter-auth.json
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+          readinessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 8
+            timeoutSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            timeoutSeconds: 5
