@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker-build": "docker build . -t registry.digitalocean.com/jessews/tweetpolite-server",
-    "docker-push": "docker push registry.digitalocean.com/jessews/tweetpolite-server"
+    "docker-build": "docker build . -t ghcr.io/okofish/tweetpolite-server:dev",
+    "docker-push": "docker push ghcr.io/okofish/tweetpolite-server:dev"
   },
   "author": {
     "name": "Jesse Friedman",
