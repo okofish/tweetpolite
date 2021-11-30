@@ -1,0 +1,61 @@
+/* body */
+body {
+  overflow: hidden;
+}
+
+/* containers */
+.container {
+  height: 100vh;
+}
+
+.container.please {
+  background-color: #C61B6E;
+}
+
+.container.thanks {
+  background-color: #728905;
+}
+
+.container.welcome {
+  background-color: #2075C7;
+}
+
+.container-label {
+  padding-top: 10px;
+  padding-left: 0px;
+  color: rgba(230, 230, 230, 0.50);
+}
+
+/* tweets */
+
+.tweet {
+  margin-bottom: 20px;
+  color: rgba(230, 230, 230, 0.90);
+}
+
+.namebox {
+  margin-bottom: 0px;
+}
+
+.handle {
+  color: rgba(230, 230, 230, 0.60);
+}
+
+/* highlights */
+
+.text b {
+  background-color: rgba(0,0,0,0.10);
+}
+
+/* notification box */
+
+.reveal {
+  background-color: #5859B7;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.reveal p {
+  white-space: pre-line;
+}
