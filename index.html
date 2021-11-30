@@ -44,10 +44,11 @@
     </div>
     
     <script type="text/javascript">
+    var isLocal = ['', 'localhost', '127.0.0.1'].includes(window.location.hostname);
     TPOptions = {
-      wsURL: 'wss://ws.tweetpolite.com',
+      wsURL: isLocal ? 'ws://localhost' : 'wss://ws.tweetpolite.com',
       refreshInterval: 1800 // in seconds
-    }
+    };
     </script>
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/foundation.min.js" type="text/javascript"></script>
